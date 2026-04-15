@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="https://raw.githubusercontent.com/Everything-Everywhere-All-At-Once/fuzzy-goggles/main/public/logo.png" width="80" height="80" alt="EEAAO logo" />
+
 # EVERYTHING EVERYWHERE ALL AT ONCE
 
 <img src="https://img.shields.io/badge/EVERYTHING-FF3399?style=for-the-badge&labelColor=0d0d0d" />
