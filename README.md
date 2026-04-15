@@ -42,7 +42,7 @@
 </tr>
 </table>
 
-<sub>Save your 3 screenshots as <code>public/screenshot-hero.png</code>, <code>public/screenshot-tools.png</code>, <code>public/screenshot-library.png</code></sub>
+<sub></code></sub>
 
 </div>
 
@@ -227,3 +227,4 @@ MIT — see [LICENSE](./LICENSE)
 [![All At Once](https://img.shields.io/badge/All_At_Once-FFFF00?style=flat-square&labelColor=0d0d0d)]()
 
 </div>
+
