@@ -15,11 +15,21 @@
 <br />
 
 [![Live Site](https://img.shields.io/badge/Live_Site-eeaao--bay.vercel.app-FF3399?style=flat-square&labelColor=0d0d0d)](https://eeaao-bay.vercel.app)
+[![GitHub Stars](https://img.shields.io/github/stars/Everything-Everywhere-All-At-Once/fuzzy-goggles?style=flat-square&color=FFFF00&labelColor=0d0d0d&logo=github&logoColor=white)](https://github.com/Everything-Everywhere-All-At-Once/fuzzy-goggles/stargazers)
 [![License](https://img.shields.io/badge/License-MIT-C055FF?style=flat-square&labelColor=0d0d0d)](./LICENSE)
 [![Next.js](https://img.shields.io/badge/Next.js-16-00FFFF?style=flat-square&logo=next.js&logoColor=white&labelColor=0d0d0d)](https://nextjs.org)
 [![Tailwind](https://img.shields.io/badge/Tailwind-v4-FFFF00?style=flat-square&logo=tailwindcss&logoColor=white&labelColor=0d0d0d)](https://tailwindcss.com)
 [![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-FF6B35?style=flat-square&logo=vercel&logoColor=white&labelColor=0d0d0d)](https://vercel.com)
 
+</div>
+
+---
+
+<div align="center">
+  <a href="https://eeaao-bay.vercel.app">
+    <img src="https://raw.githubusercontent.com/Everything-Everywhere-All-At-Once/fuzzy-goggles/main/public/preview.png" alt="EEAAO preview" width="100%" style="border-radius:8px" />
+  </a>
+  <sub>→ Drop a screenshot or GIF as <code>public/preview.png</code> to populate this</sub>
 </div>
 
 ---

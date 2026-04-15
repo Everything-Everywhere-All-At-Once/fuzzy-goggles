@@ -203,9 +203,17 @@ export default function Home() {
             <span>—</span>
             <span>everything everywhere all at once · {totalTools} tools · no uploads · no accounts</span>
           </div>
-          <div className="flex gap-5">
+          <div className="flex items-center gap-5">
             <Link href="/library"   className="hover:text-[#52525b] transition-colors">/library</Link>
             <Link href="/community" className="hover:text-[#52525b] transition-colors">/community</Link>
+            <a
+              href="https://github.com/Everything-Everywhere-All-At-Once/fuzzy-goggles"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#FFFF00] transition-colors"
+            >
+              ⭐ star on github
+            </a>
           </div>
         </div>
       </footer>
