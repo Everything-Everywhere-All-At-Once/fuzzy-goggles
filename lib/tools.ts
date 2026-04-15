@@ -3,6 +3,7 @@ export type Tool = {
   description: string;
   href: string;
   status: "live" | "soon";
+  isNew?: true;
 };
 
 export type Category = {
@@ -31,9 +32,9 @@ export const categories: Category[] = [
       { name: "Metadata Editor", description: "Edit ID3 tags & cover art", href: "/tools/audio/metadata", status: "live" },
       { name: "Vocal Remover", description: "Stem split — isolate vocals", href: "/tools/audio/vocals", status: "soon" },
       { name: "Audio Normalizer", description: "Level out volume across tracks", href: "/tools/audio/normalize", status: "live" },
-      { name: "BPM Tap Counter", description: "Tap to measure beats per minute", href: "/tools/audio/bpm-tap", status: "live" },
-      { name: "Waveform Visualizer", description: "Visualize audio waveform from file", href: "/tools/audio/waveform", status: "live" },
-      { name: "Metronome", description: "Precise click track with BPM control", href: "/tools/audio/metronome", status: "live" },
+      { name: "BPM Tap Counter", description: "Tap to measure beats per minute", href: "/tools/audio/bpm-tap", status: "live", isNew: true },
+      { name: "Waveform Visualizer", description: "Visualize audio waveform from file", href: "/tools/audio/waveform", status: "live", isNew: true },
+      { name: "Metronome", description: "Precise click track with BPM control", href: "/tools/audio/metronome", status: "live", isNew: true },
     ],
   },
   {
@@ -116,11 +117,11 @@ export const categories: Category[] = [
       { name: "JWT Decoder", description: "Decode & inspect JWT tokens", href: "/tools/cyber/jwt", status: "live" },
       { name: "QR Generator", description: "Create & read QR codes", href: "/tools/cyber/qr", status: "live" },
       { name: "Steganography", description: "Hide data inside images", href: "/tools/cyber/stego", status: "live" },
-      { name: "WHOIS Lookup", description: "Domain registration & DNS info", href: "/tools/cyber/whois", status: "live" },
-      { name: "DNS Lookup", description: "Query A, MX, TXT, NS, CNAME records", href: "/tools/cyber/dns", status: "live" },
-      { name: "robots.txt Analyzer", description: "Parse and audit robots.txt files", href: "/tools/cyber/robots", status: "live" },
-      { name: "IP / CIDR Calculator", description: "Subnet, broadcast & host range", href: "/tools/cyber/ip-calc", status: "live" },
-      { name: "JWT Builder", description: "Build and sign JWT tokens in browser", href: "/tools/cyber/jwt-builder", status: "live" },
+      { name: "WHOIS Lookup", description: "Domain registration & DNS info", href: "/tools/cyber/whois", status: "live", isNew: true },
+      { name: "DNS Lookup", description: "Query A, MX, TXT, NS, CNAME records", href: "/tools/cyber/dns", status: "live", isNew: true },
+      { name: "robots.txt Analyzer", description: "Parse and audit robots.txt files", href: "/tools/cyber/robots", status: "live", isNew: true },
+      { name: "IP / CIDR Calculator", description: "Subnet, broadcast & host range", href: "/tools/cyber/ip-calc", status: "live", isNew: true },
+      { name: "JWT Builder", description: "Build and sign JWT tokens in browser", href: "/tools/cyber/jwt-builder", status: "live", isNew: true },
     ],
   },
   {
@@ -171,13 +172,13 @@ export const categories: Category[] = [
       { name: "Markdown Editor", description: "Write & preview Markdown", href: "/tools/qol/markdown", status: "live" },
       { name: "UUID Generator", description: "Generate unique identifiers", href: "/tools/qol/uuid", status: "live" },
       { name: "Pomodoro Timer", description: "Focus timer with breaks", href: "/tools/qol/pomodoro", status: "live" },
-      { name: "Color Contrast Checker", description: "WCAG AA/AAA accessibility ratios", href: "/tools/qol/contrast", status: "live" },
-      { name: "Cron Expression Builder", description: "Build and explain cron schedules", href: "/tools/qol/cron", status: "live" },
-      { name: "Timestamp Converter", description: "Unix timestamp to/from human date", href: "/tools/qol/timestamp", status: "live" },
-      { name: "Word Counter", description: "Count words, chars, sentences, reading time", href: "/tools/qol/word-count", status: "live" },
-      { name: "Lorem Ipsum Generator", description: "Generate placeholder text", href: "/tools/qol/lorem", status: "live" },
-      { name: "Aspect Ratio Calculator", description: "Calculate dimensions from any ratio", href: "/tools/qol/aspect-ratio", status: "live" },
-      { name: "CSV Viewer", description: "Drag in a CSV and browse as a table", href: "/tools/qol/csv", status: "live" },
+      { name: "Color Contrast Checker", description: "WCAG AA/AAA accessibility ratios", href: "/tools/qol/contrast", status: "live", isNew: true },
+      { name: "Cron Expression Builder", description: "Build and explain cron schedules", href: "/tools/qol/cron", status: "live", isNew: true },
+      { name: "Timestamp Converter", description: "Unix timestamp to/from human date", href: "/tools/qol/timestamp", status: "live", isNew: true },
+      { name: "Word Counter", description: "Count words, chars, sentences, reading time", href: "/tools/qol/word-count", status: "live", isNew: true },
+      { name: "Lorem Ipsum Generator", description: "Generate placeholder text", href: "/tools/qol/lorem", status: "live", isNew: true },
+      { name: "Aspect Ratio Calculator", description: "Calculate dimensions from any ratio", href: "/tools/qol/aspect-ratio", status: "live", isNew: true },
+      { name: "CSV Viewer", description: "Drag in a CSV and browse as a table", href: "/tools/qol/csv", status: "live", isNew: true },
     ],
   },
   {

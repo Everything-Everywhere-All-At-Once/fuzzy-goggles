@@ -35,10 +35,20 @@ export function CategoryContent({ cat }: { cat: Category }) {
               />
               <div className="flex items-start justify-between gap-2 mb-3 pl-1">
                 <h2 className="text-sm font-semibold text-[#e4e4e7] leading-snug">{tool.name}</h2>
-                <div
-                  className="w-2 h-2 rounded-full shrink-0 mt-1 animate-pulse"
-                  style={{ backgroundColor: cat.accent, opacity: 0.5 }}
-                />
+                <div className="flex items-center gap-1.5 shrink-0">
+                  {tool.isNew && (
+                    <span
+                      className="text-[8px] font-mono tracking-widest px-1.5 py-0.5 rounded-sm"
+                      style={{ backgroundColor: `${cat.accent}20`, color: cat.accent }}
+                    >
+                      NEW
+                    </span>
+                  )}
+                  <div
+                    className="w-2 h-2 rounded-full mt-0.5 animate-pulse"
+                    style={{ backgroundColor: cat.accent, opacity: 0.5 }}
+                  />
+                </div>
               </div>
               <p className="text-xs text-[#52525b] leading-relaxed pl-1 mb-4">{tool.description}</p>
               <div

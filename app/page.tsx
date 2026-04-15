@@ -122,7 +122,12 @@ export default function Home() {
                     onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = `${cat.accent}55`; el.style.backgroundColor = `${cat.accent}08`; }}
                     onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "#1e1e1e"; el.style.backgroundColor = "#111111"; }}>
                     <span className="text-[9px] font-mono tracking-widest mb-1" style={{ color: `${cat.accent}80` }}>{cat.label}</span>
-                    <span className="text-sm font-bold text-[#e4e4e7] mb-1">{tool.name}</span>
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-sm font-bold text-[#e4e4e7]">{tool.name}</span>
+                      {tool.isNew && (
+                        <span className="text-[8px] font-mono tracking-widest px-1.5 py-0.5 rounded-sm shrink-0" style={{ backgroundColor: `${cat.accent}20`, color: cat.accent }}>NEW</span>
+                      )}
+                    </div>
                     <span className="text-[11px] text-[#52525b]">{tool.description}</span>
                     {tool.status === "soon" && <span className="mt-2 text-[9px] font-mono text-[#3f3f46] tracking-widest">coming soon</span>}
                   </Link>
