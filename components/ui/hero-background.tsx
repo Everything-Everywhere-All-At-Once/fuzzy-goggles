@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 
 const PALETTE = [
@@ -136,13 +136,16 @@ export function HeroBackground({ global: isGlobal = false }: HeroBackgroundProps
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pathname = usePathname();
   const isHomepage = pathname === "/";
+  const [isMobile, setIsMobile] = useState(true);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-
-    // Skip on mobile — canvas animation is buggy on small screens
-    if (window.innerWidth < 768) return;
+    if (isMobile) return;
 
     const ctx = canvas.getContext("2d")!;
 
@@ -197,13 +200,15 @@ export function HeroBackground({ global: isGlobal = false }: HeroBackgroundProps
       cancelAnimationFrame(raf);
       ro.disconnect();
     };
-  }, [isGlobal, pathname]);
+  }, [isGlobal, pathname, isMobile]);
+
+  if (isMobile) return null;
 
   if (isGlobal) {
     return (
       <canvas
         ref={canvasRef}
-        className="fixed inset-0 w-full h-full pointer-events-none hidden md:block"
+        className="fixed inset-0 w-full h-full pointer-events-none"
         style={{ zIndex: 0, opacity: 1 }}
       />
     );
@@ -212,7 +217,7 @@ export function HeroBackground({ global: isGlobal = false }: HeroBackgroundProps
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full pointer-events-none hidden md:block"
+      className="absolute inset-0 w-full h-full pointer-events-none"
       style={{ opacity: 0.8 }}
     />
   );
