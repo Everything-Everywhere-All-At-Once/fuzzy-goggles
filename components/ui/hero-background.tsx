@@ -140,6 +140,10 @@ export function HeroBackground({ global: isGlobal = false }: HeroBackgroundProps
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+
+    // Skip on mobile — canvas animation is buggy on small screens
+    if (window.innerWidth < 768) return;
+
     const ctx = canvas.getContext("2d")!;
 
     // Homepage: visible and punchy. Inner pages: barely perceptible color wash.
@@ -152,23 +156,28 @@ export function HeroBackground({ global: isGlobal = false }: HeroBackgroundProps
     let lastSpawn = 0;
 
     const resize = () => {
-      canvas.width  = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
+      // Fall back to window dimensions if offsetWidth hasn't settled yet
+      canvas.width  = canvas.offsetWidth  || window.innerWidth;
+      canvas.height = canvas.offsetHeight || window.innerHeight;
     };
     resize();
     const ro = new ResizeObserver(resize);
     ro.observe(canvas);
 
-    // Pre-seed staggered bursts
-    const t0    = performance.now();
-    const seeds = isGlobal ? 5 : 5;
-    for (let i = 0; i < seeds; i++) {
-      const bst = createBurst(canvas.width, canvas.height, t0);
-      bst.born  = t0 - bst.life * (i / seeds) * 0.6;
-      bursts.push(bst);
-    }
+    // Pre-seed staggered bursts — deferred one frame so canvas has real dimensions
+    let seeded = false;
+    const seedBursts = (now: number) => {
+      if (seeded) return;
+      seeded = true;
+      for (let i = 0; i < 5; i++) {
+        const bst = createBurst(canvas.width, canvas.height, now);
+        bst.born  = now - bst.life * (i / 5) * 0.6;
+        bursts.push(bst);
+      }
+    };
 
     const loop = (now: number) => {
+      seedBursts(now);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.globalCompositeOperation = "screen";
 
@@ -194,7 +203,7 @@ export function HeroBackground({ global: isGlobal = false }: HeroBackgroundProps
     return (
       <canvas
         ref={canvasRef}
-        className="fixed inset-0 w-full h-full pointer-events-none"
+        className="fixed inset-0 w-full h-full pointer-events-none hidden md:block"
         style={{ zIndex: 0, opacity: 1 }}
       />
     );
@@ -203,7 +212,7 @@ export function HeroBackground({ global: isGlobal = false }: HeroBackgroundProps
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full pointer-events-none"
+      className="absolute inset-0 w-full h-full pointer-events-none hidden md:block"
       style={{ opacity: 0.8 }}
     />
   );
